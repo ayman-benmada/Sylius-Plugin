@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "build": "encore dev",
+    "build:prod": "encore production",
+    "postinstall": "semantic-ui-css-patch",
+    "lint": "yarn lint:js",
+    "watch": "encore dev --watch"
+  },
+  "devDependencies": {
+    "@sylius-ui/frontend": "^1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ayman-benmada/Sylius-Plugin.git"
+  },
+  "author": "Ayman Benmada",
+  "license": "MIT"
+}

@@ -1,0 +1,83 @@
+services:
+    traefik:
+        container_name: sylius_plugin_traefik
+        image: traefik:3.0
+        command:
+            - --providers.docker=true
+            - --providers.docker.exposedByDefault=false
+            - --api.dashboard=true
+            - --api.insecure=true
+        labels:
+            - traefik.enable=true
+            - traefik.http.routers.traefik.rule=Host(`traefik.$DOMAIN`)
+            - traefik.http.routers.traefik.service=traefik
+            - traefik.http.services.traefik.loadbalancer.server.port=8080
+        ports:
+            - "80:80"
+            - "8080:8080"
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+
+    web:
+        container_name: sylius_plugin_web
+        image: thecodingmachine/php:8.3-v4-apache-node16
+        labels:
+            - traefik.enable=true
+            - traefik.http.routers.web.rule=Host(`$DOMAIN`)
+        env_file: .env
+        environment:
+            APACHE_DOCUMENT_ROOT: "public/"
+            APACHE_EXTENSIONS_HTTP2: 1
+            PHP_EXTENSION_XDEBUG: 0
+            PHP_EXTENSION_INTL: 1
+            PHP_EXTENSION_GD: 1
+            PHP_INI_MEMORY_LIMIT: "8G"
+            PHP_INI_UPLOAD_MAX_FILESIZE: "1G"
+            PHP_INI_POST_MAX_SIZE: "2G"
+            PHP_INI_DATE__TIMEZONE: "Europe/Paris"
+            # CRON
+            CRON_USER: root
+            CRON_SCHEDULE: "* * * * *"
+            CRON_COMMAND: bin/console synolia:scheduler-run
+            # Database
+            DATABASE_URL: "mysql://$MYSQL_USER:$MYSQL_PASSWORD@mysql:3306/$MYSQL_DATABASE?server_version=8.0"
+            # Logging.
+            MONOLOG_LOGGING_PATH: "php://stderr"
+        volumes:
+            - ./:/var/www/html
+
+    mysql:
+        container_name: sylius_plugin_mysql
+        image: mysql:8.0
+        restart: unless-stopped
+        environment:
+            MYSQL_ROOT_PASSWORD: "$MYSQL_ROOT_PASSWORD"
+            MYSQL_DATABASE: "$MYSQL_DATABASE"
+            MYSQL_USER: "$MYSQL_USER"
+            MYSQL_PASSWORD: "$MYSQL_PASSWORD"
+        volumes:
+            - mysql_data:/var/lib/mysql
+
+    phpmyadmin:
+        container_name: sylius_plugin_pma
+        image: phpmyadmin/phpmyadmin:5.0
+        labels:
+            - traefik.enable=true
+            - traefik.http.routers.phpmyadmin.rule=Host(`pma.$DOMAIN`)
+        environment:
+            PMA_HOSTS: "mysql"
+            PMA_USER: "root"
+            PMA_PASSWORD: "$MYSQL_ROOT_PASSWORD"
+
+    mailcatcher:
+        container_name: sylius_plugin_mailcatcher
+        image: schickling/mailcatcher
+        labels:
+            - traefik.enable=true
+            - traefik.http.routers.mailcatcher.rule=Host(`mailcatcher.$DOMAIN`)
+            - traefik.http.routers.mailcatcher.service=mailcatcher
+            - traefik.http.services.mailcatcher.loadbalancer.server.port=1080
+
+volumes:
+    mysql_data:
+        driver: local
