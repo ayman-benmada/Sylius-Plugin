@@ -27,9 +27,6 @@ jobs:
                     restore-keys: |
                         ${{ runner.os }}-php-${{ matrix.php }}-composer-
 
-            -   name: Copy .env file
-                run: cp .env.template .env
-
             -   name: Clone Backoffice sylius plugin
                 run: git clone -b main https://github.com/ayman-benmada/Sylius-Backoffice-Plugin.git plugin/BackofficePlugin
 
