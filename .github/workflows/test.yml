@@ -41,7 +41,7 @@ jobs:
                 run: git clone -b main https://github.com/ayman-benmada/Sylius-Backoffice-Plugin.git plugin/BackofficePlugin
 
             -   name: Install composer dependencies
-                run: composer install --prefer-dist --no-interaction --ansi
+                run: composer install --prefer-dist --no-ansi --no-scripts --no-interaction --no-progress
 
             -   name: Run PHPStan
                 run: composer phpstan
