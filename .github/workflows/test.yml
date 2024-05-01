@@ -9,8 +9,6 @@ jobs:
         runs-on: ubuntu-latest
         strategy:
             fail-fast: false
-            matrix:
-                php: [ "8.3" ]
         env:
             PHP_CS_FIXER_IGNORE_ENV: true
         steps:
@@ -21,13 +19,14 @@ jobs:
                 with:
                     php-version: "${{ matrix.php }}"
 
-            -   name: Cache Composer
+            -   name: Cache Composer packages
+                id: composer-cache
                 uses: actions/cache@v3
                 with:
                     path: vendor
-                    key: ${{ runner.os }}-php-${{ matrix.php }}-composer-${{ hashFiles('**/composer.json **/composer.lock') }}
+                    key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
                     restore-keys: |
-                        ${{ runner.os }}-php-${{ matrix.php }}-composer-
+                        ${{ runner.os }}-php-
 
             -   name: Clone Backoffice sylius plugin
                 run: git clone -b main https://github.com/ayman-benmada/Sylius-Backoffice-Plugin.git plugin/BackofficePlugin
@@ -38,5 +37,5 @@ jobs:
             -   name: Run PHPStan
                 run: composer phpstan
 
-            -   name: Run PHP Code Sniffer
+            -   name: Run PHP Coding Standards Fixer
                 run: composer cscheck
