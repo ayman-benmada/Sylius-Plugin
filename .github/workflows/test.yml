@@ -19,7 +19,18 @@ jobs:
                 ports:
                     - 3306:3306
                 options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
-
+            web:
+                image: thecodingmachine/php:8.3-v4-cli
+                env:
+                    PHP_INI_MEMORY_LIMIT: "8G"
+                    PHP_EXTENSIONS: "intl gd"
+                    MYSQL_USER: root
+                    MYSQL_PASSWORD: root
+                    MYSQL_HOST: 127.0.0.1
+                    MYSQL_PORT: 3306
+                ports:
+                    - 80:80
+                options: --health-cmd="curl --silent --fail localhost" --health-interval=10s --health-timeout=5s --health-retries=3
         steps:
             -   uses: actions/checkout@v4
 
