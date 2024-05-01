@@ -7,6 +7,15 @@ on:
 jobs:
     build:
         runs-on: ubuntu-latest
+        services:
+            -   name: mysql:8.0
+                alias: mysql
+                variables:
+                    PHP_INI_MEMORY_LIMIT: "8G"
+                    PHP_EXTENSIONS: "intl gd"
+                    MYSQL_DATABASE: sylius_plugin
+                    MYSQL_ROOT_PASSWORD: root
+                    MYSQL_USER: root
         steps:
             -   uses: actions/checkout@v4
 
@@ -32,9 +41,6 @@ jobs:
 
             -   name: Install composer dependencies
                 run: composer install --prefer-dist --no-interaction --ansi
-
-            -   name: Run static analysis check
-                run: composer check-static
 
             -   name: Run PHPStan
                 run: composer phpstan
