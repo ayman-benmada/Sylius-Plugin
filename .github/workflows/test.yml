@@ -6,10 +6,6 @@ on:
 
 jobs:
     test:
-        runs-on: ubuntu-latest
-        strategy:
-            matrix:
-                php-version: [ 8.3 ]
         services:
             mysql:
                 image: mysql:8.0
