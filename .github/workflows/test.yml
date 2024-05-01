@@ -7,31 +7,33 @@ on:
 jobs:
     test:
         runs-on: ubuntu-latest
+        container:
+            image: thecodingmachine/php:8.3-v4-cli
+            env:
+                PHP_INI_MEMORY_LIMIT: "8G"
+                PHP_EXTENSIONS: "intl gd"
+                MYSQL_USER: root
+                MYSQL_PASSWORD: root
+                MYSQL_HOST: 127.0.0.1
+                MYSQL_PORT: 3306
+            ports:
+                - 80:80
+        services:
+            mysql:
+                image: mysql:8.0
+                env:
+                    MYSQL_ROOT_PASSWORD: root
+                    MYSQL_DATABASE: sylius_plugin
+                ports:
+                    - 3306:3306
         steps:
             -   uses: actions/checkout@v4
-
-            -   name: Start MySQL container
-                run: |
-                    docker run -d --name mysql \
-                    -e MYSQL_ROOT_PASSWORD=root \
-                    -e MYSQL_DATABASE=sylius_plugin \
-                    mysql:8.0
-
-            -   name: Start PHP container
-                run: |
-                    docker run -d --name web \
-                    -e PHP_INI_MEMORY_LIMIT=8G \
-                    -e PHP_EXTENSIONS="intl gd" \
-                    -e MYSQL_DATABASE=sylius_plugin \
-                    -e MYSQL_ROOT_PASSWORD=root \
-                    -e MYSQL_USER=root \
-                    thecodingmachine/php:8.3-v4-cli
 
             # -   name: Validate composer.json and composer.lock
             #     run: composer validate --strict
 
             -   name: Install Composer dependencies
-                run: composer install --prefer-dist --no-ansi --no-scripts --no-interaction --no-progress --no-suggest
+                run: composer install --prefer-dist --no-progress
 
             -   name: Run PHPStan
                 run: composer phpstan
