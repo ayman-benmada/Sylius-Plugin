@@ -14,9 +14,15 @@ jobs:
                 run: |
                     docker run -d --name mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=sylius_plugin mysql:8.0
 
-            -   name: Start thecodingmachine/php:8.3-v4-cli container
+            -   name: Start PHP container
                 run: |
-                    docker run -d --name web -e PHP_INI_MEMORY_LIMIT=8g -e PHP_EXTENSIONS="intl gd" MYSQL_DATABASE=sylius_plugin MYSQL_ROOT_PASSWORD=root MYSQL_USER=root thecodingmachine/php:8.3-v4-cli
+                    docker run -d --name web \
+                    -e PHP_INI_MEMORY_LIMIT=8G \
+                    -e PHP_EXTENSIONS="intl gd" \
+                    -e MYSQL_DATABASE=sylius_plugin \
+                    -e MYSQL_ROOT_PASSWORD=root \
+                    -e MYSQL_USER=root \
+                    thecodingmachine/php:8.3-v4-cli
 
             # -   name: Validate composer.json and composer.lock
             #     run: composer validate --strict
