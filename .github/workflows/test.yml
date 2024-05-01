@@ -8,12 +8,12 @@ jobs:
     test:
         runs-on: ubuntu-latest
         steps:
-            -   use: mysql:8.0
+            -   uses: mysql:8.0
                 env:
                     MYSQL_ROOT_PASSWORD: root
                     MYSQL_DATABASE: sylius_plugin
 
-            -   use: thecodingmachine/php:8.3-v4-cli
+            -   uses: thecodingmachine/php:8.3-v4-cli
                 env:
                     PHP_INI_MEMORY_LIMIT: "8G"
                     PHP_EXTENSIONS: "intl gd"
