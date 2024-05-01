@@ -1,7 +1,7 @@
 parameters:
     paths:
         - src
-    excludes_analyse:
+    excludePaths:
         - src/Kernel.php
     level: max
     checkGenericClassInNonGenericObjectType: false
