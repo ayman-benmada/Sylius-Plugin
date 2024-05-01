@@ -25,7 +25,7 @@ jobs:
                         ${{ runner.os }}-php-
 
             -   name: Cloning Backoffice sylius plugin
-                run: git clone -b main git@github.com:ayman-benmada/Sylius-Backoffice-Plugin.git plugin/BackofficePlugin
+                run: git clone -b main https://github.com/ayman-benmada/Sylius-Backoffice-Plugin.git plugin/BackofficePlugin
 
             -   name: Install composer dependencies
                 run: composer install --prefer-dist --no-interaction --ansi
