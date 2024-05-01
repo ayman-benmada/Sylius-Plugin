@@ -10,29 +10,22 @@ permissions:
 jobs:
     build:
         runs-on: ubuntu-latest
-        strategy:
-            matrix:
-                php-version: [ '8.3' ]
+        php-container:
+            image: thecodingmachine/php:8.3-v4-cli
         steps:
             -   uses: actions/checkout@v4
 
             # -   name: Validate composer.json and composer.lock
             #     run: composer validate --strict
 
-            -   name: Cache Composer packages
-                id: composer-cache
-                uses: actions/cache@v3
-                with:
-                    path: vendor
-                    key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-                    restore-keys: |
-                        ${{ runner.os }}-php-
-
             -   name: Install dependencies
                 run: composer install --prefer-dist --no-progress
+                container: php-container
 
             -   name: Run PHPStan
                 run: composer phpstan
+                container: php-container
 
             -   name: Run PHP Code Sniffer
                 run: composer cscheck
+                container: php-container
