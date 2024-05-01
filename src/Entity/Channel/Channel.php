@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Entity\Channel;
 
+use Abenmada\BackofficePlugin\Model\Channel\ChannelTrait as AbenmadaBackofficeChannelTrait;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-use Abenmada\BackofficePlugin\Model\Channel\ChannelTrait as AbenmadaBackofficeChannelTrait;
 use Sylius\Component\Core\Model\Channel as BaseChannel;
 use Sylius\Component\Core\Model\ImagesAwareInterface;
 
