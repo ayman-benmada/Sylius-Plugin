@@ -10,18 +10,13 @@ jobs:
         steps:
             -   uses: actions/checkout@v4
 
-            -   uses: mysql:8.0
-                env:
-                    MYSQL_ROOT_PASSWORD: root
-                    MYSQL_DATABASE: sylius_plugin
+            -   name: Start MySQL container
+                run: |
+                    docker run -d --name mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=sylius_plugin mysql:8.0
 
-            -   uses: thecodingmachine/php:8.3-v4-cli
-                env:
-                    PHP_INI_MEMORY_LIMIT: "8G"
-                    PHP_EXTENSIONS: "intl gd"
-                    MYSQL_DATABASE: sylius_plugin
-                    MYSQL_ROOT_PASSWORD: root
-                    MYSQL_USER: root
+            -   name: Start thecodingmachine/php:8.3-v4-cli container
+                run: |
+                    docker run -d --name web -e PHP_INI_MEMORY_LIMIT=8G -e PHP_EXTENSIONS="intl gd" MYSQL_DATABASE=sylius_plugin MYSQL_ROOT_PASSWORD=root MYSQL_USER=root thecodingmachine/php:8.3-v4-cli
 
             # -   name: Validate composer.json and composer.lock
             #     run: composer validate --strict
