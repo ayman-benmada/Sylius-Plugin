@@ -8,6 +8,8 @@ jobs:
     test:
         runs-on: ubuntu-latest
         steps:
+            -   uses: actions/checkout@v4
+
             -   uses: mysql:8.0
                 env:
                     MYSQL_ROOT_PASSWORD: root
@@ -21,13 +23,11 @@ jobs:
                     MYSQL_ROOT_PASSWORD: root
                     MYSQL_USER: root
 
-            -   uses: actions/checkout@v4
-
             # -   name: Validate composer.json and composer.lock
             #     run: composer validate --strict
 
             -   name: Install Composer dependencies
-                run: composer install --prefer-dist --no-progress
+                run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
 
             -   name: Run PHPStan
                 run: composer phpstan
