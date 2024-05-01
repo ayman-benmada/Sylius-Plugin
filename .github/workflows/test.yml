@@ -12,7 +12,10 @@ jobs:
 
             -   name: Start MySQL container
                 run: |
-                    docker run -d --name mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=sylius_plugin mysql:8.0
+                    docker run -d --name mysql \
+                    -e MYSQL_ROOT_PASSWORD=root \
+                    -e MYSQL_DATABASE=sylius_plugin \
+                    mysql:8.0
 
             -   name: Start PHP container
                 run: |
@@ -28,7 +31,7 @@ jobs:
             #     run: composer validate --strict
 
             -   name: Install Composer dependencies
-                run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+                run: composer install --prefer-dist --no-ansi --no-scripts --no-interaction --no-progress --no-suggest
 
             -   name: Run PHPStan
                 run: composer phpstan
