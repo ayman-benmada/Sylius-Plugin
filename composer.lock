@@ -8,11 +8,11 @@
     "packages": [
         {
             "name": "abenmada/backoffice-plugin",
-            "version": "dev-main",
+            "version": "1.0.0",
             "dist": {
                 "type": "path",
                 "url": "plugin/BackofficePlugin",
-                "reference": "71455839fa18376e441b315c868f8b3464924acc"
+                "reference": "55a02f5fc5a872b0d7278066c0afc01f7954b6e6"
             },
             "require": {
                 "php": "^7.4 || ^8.0",
@@ -53,7 +53,7 @@
                 "thecodingmachine/phpstan-strict-rules": "^0.12.1",
                 "vimeo/psalm": "4.7.1"
             },
-            "type": "project",
+            "type": "sylius-plugin",
             "extra": {
                 "branch-alias": {
                     "dev-master": "1.10-dev"
@@ -86,35 +86,31 @@
                 "phpstan": [
                     "phpstan analyse -c phpstan.neon -vvv --memory-limit=1024M"
                 ],
-                "phpstan-baseline": [
-                    "phpstan analyse -c phpstan.neon -vvv --memory-limit=1024M --generate-baseline"
-                ],
                 "cscheck": [
                     "phpcs -s"
                 ],
                 "csfix": [
                     "phpcbf -s"
                 ],
-                "pest": [
-                    "pest --coverage"
-                ],
                 "lint": [
-                    "composer csfix && composer cscheck && composer phpstan && composer pest"
+                    "composer csfix && composer cscheck && composer phpstan"
                 ]
             },
             "license": [
-                "proprietary"
+                "MIT"
             ],
             "authors": [
                 {
-                    "name": "Ayman Benmada"
+                    "name": "Ayman BENMADA"
                 }
             ],
             "description": "The Backoffice plugin allows you to change back office color and channel logo",
             "keywords": [
                 "backoffice",
+                "e-commerce",
                 "style",
                 "sylius",
+                "sylius-plugin",
                 "symfony"
             ],
             "transport-options": {

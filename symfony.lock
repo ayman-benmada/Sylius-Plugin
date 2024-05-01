@@ -1,4 +1,7 @@
 {
+    "abenmada/backoffice-plugin": {
+        "version": "1.0.0"
+    },
     "aeon-php/calendar": {
         "version": "0.16.4"
     },
