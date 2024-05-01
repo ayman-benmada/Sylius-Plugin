@@ -13,7 +13,7 @@ jobs:
         container:
             image: thecodingmachine/php:8.3-v4-cli
         steps:
-            -   uses: actions/checkout@v4
+            # -   uses: actions/checkout@v4
 
             # -   name: Validate composer.json and composer.lock
             #     run: composer validate --strict
