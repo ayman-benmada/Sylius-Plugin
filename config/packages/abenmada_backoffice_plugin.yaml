@@ -1,0 +1,2 @@
+imports:
+    - { resource: "@BackofficePlugin/Resources/config/services.yaml" }

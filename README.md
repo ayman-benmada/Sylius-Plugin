@@ -1,5 +1,9 @@
 # Sylius Plugin
 
+<p>
+    This project allows me to test all the Sylius plugins I have developed.
+</p>
+
 ## Prerequisites
 
 Install Docker by following this link : https://docs.docker.com/engine/installation
@@ -13,8 +17,6 @@ Then copy the file `.env.template` to a file named `.env`. For instance:
 ```bash
 cp .env.template .env 
 ```
-
-Ask a colleague for the **COMPOSER_AUTH** to add in your .env
 
 **Next, make sure that there is no application running on port 80**, then start all the Docker containers with the
 following commands:

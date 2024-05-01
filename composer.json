@@ -1,7 +1,7 @@
 {
     "name": "abenmada/sylius-plugin",
     "type": "project",
-    "description": "Sylius plugin project",
+    "description": "Testing all the Sylius plugins I have developed",
     "keywords": [
         "symfony",
         "sylius",
@@ -17,6 +17,15 @@
             "name": "Ayman BENMADA"
         }
     ],
+    "repositories": [
+        {
+            "type": "path",
+            "url": "plugin/BackofficePlugin",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],
     "require": {
         "php": "^8.3",
         "http-interop/http-factory-guzzle": "^1.2",
@@ -25,7 +34,8 @@
         "symfony/dotenv": "^5.4 || ^6.4",
         "symfony/flex": "^2.4",
         "symfony/http-client": "^5.4",
-        "symfony/runtime": "^5.4 || ^6.4"
+        "symfony/runtime": "^5.4 || ^6.4",
+        "abenmada/backoffice-plugin": "@dev"
     },
     "require-dev": {
         "behat/behat": "^3.7",

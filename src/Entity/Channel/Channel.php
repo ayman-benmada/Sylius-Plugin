@@ -4,8 +4,11 @@ declare(strict_types=1);
 
 namespace App\Entity\Channel;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Abenmada\BackofficePlugin\Model\Channel\ChannelTrait as AbenmadaBackofficeChannelTrait;
 use Sylius\Component\Core\Model\Channel as BaseChannel;
+use Sylius\Component\Core\Model\ImagesAwareInterface;
 
 /**
  * @ORM\Entity
@@ -13,6 +16,13 @@ use Sylius\Component\Core\Model\Channel as BaseChannel;
  */
 #[ORM\Entity]
 #[ORM\Table(name: 'sylius_channel')]
-class Channel extends BaseChannel
+class Channel extends BaseChannel implements ImagesAwareInterface
 {
+    use AbenmadaBackofficeChannelTrait;
+
+    public function __construct()
+    {
+        $this->images = new ArrayCollection();
+        parent::__construct();
+    }
 }
