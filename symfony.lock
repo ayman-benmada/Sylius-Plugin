@@ -5,6 +5,9 @@
     "abenmada/export-plugin": {
         "version": "dev-main"
     },
+    "abenmada/media-plugin": {
+        "version": "dev-main"
+    },
     "aeon-php/calendar": {
         "version": "0.16.4"
     },

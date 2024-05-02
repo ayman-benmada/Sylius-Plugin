@@ -31,6 +31,13 @@
             "options": {
                 "symlink": true
             }
+        },
+        {
+            "type": "path",
+            "url": "plugin/MediaPlugin",
+            "options": {
+                "symlink": true
+            }
         }
     ],
     "require": {
@@ -43,7 +50,8 @@
         "symfony/http-client": "^5.4",
         "symfony/runtime": "^5.4 || ^6.4",
         "abenmada/backoffice-plugin": "@dev",
-        "abenmada/export-plugin": "@dev"
+        "abenmada/export-plugin": "@dev",
+        "abenmada/media-plugin": "@dev"
     },
     "require-dev": {
         "behat/behat": "^3.7",

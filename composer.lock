@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fe3861d83a6f975a7098c61f40b589d2",
+    "content-hash": "c8e1cd817e62d215330b6908226e139a",
     "packages": [
         {
             "name": "abenmada/backoffice-plugin",
@@ -12,7 +12,7 @@
             "dist": {
                 "type": "path",
                 "url": "plugin/BackofficePlugin",
-                "reference": "23a603351b8fbe5c655d5afa9b6f0f6bec21f352"
+                "reference": "7d9adef3327728a6e70fc10576f45491423dfba8"
             },
             "require": {
                 "php": "^8.0",
@@ -123,7 +123,7 @@
             "dist": {
                 "type": "path",
                 "url": "plugin/ExportPlugin",
-                "reference": "7b4526f5823169f66663ae0177e3349fa8853bfa"
+                "reference": "c6026544c4a065bd028510dd85bbf071c6bae6af"
             },
             "require": {
                 "php": "^8.0",
@@ -219,6 +219,117 @@
             "keywords": [
                 "e-commerce",
                 "export",
+                "sylius",
+                "sylius-plugin",
+                "symfony"
+            ],
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "abenmada/media-plugin",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "plugin/MediaPlugin",
+                "reference": "4beffa2b089002ef759d059f6f183dd45e3edb8e"
+            },
+            "require": {
+                "php": "^8.0",
+                "sylius/sylius": "^1.10"
+            },
+            "require-dev": {
+                "behat/behat": "^3.6.1",
+                "behat/mink-selenium2-driver": "^1.4",
+                "dmore/behat-chrome-extension": "^1.3",
+                "dmore/chrome-mink-driver": "^2.7",
+                "friends-of-behat/mink": "^1.8",
+                "friends-of-behat/mink-browserkit-driver": "^1.4",
+                "friends-of-behat/mink-debug-extension": "^2.0.0",
+                "friends-of-behat/mink-extension": "^2.4",
+                "friends-of-behat/page-object-extension": "^0.3",
+                "friends-of-behat/suite-settings-extension": "^1.0",
+                "friends-of-behat/symfony-extension": "^2.1",
+                "friends-of-behat/variadic-extension": "^1.3",
+                "friendsofphp/php-cs-fixer": "^3.9",
+                "phpspec/phpspec": "^7.2",
+                "phpstan/extension-installer": "^1.0",
+                "phpstan/phpstan": "^1.8.1",
+                "phpstan/phpstan-doctrine": "1.3.40",
+                "phpstan/phpstan-strict-rules": "^1.3.0",
+                "phpstan/phpstan-webmozart-assert": "^1.2.0",
+                "phpunit/phpunit": "^9.5",
+                "polishsymfonycommunity/symfony-mocker-container": "^1.0",
+                "sylius-labs/coding-standard": "^4.2",
+                "symfony/browser-kit": "^5.4 || ^6.0",
+                "symfony/debug-bundle": "^5.4 || ^6.0",
+                "symfony/dotenv": "^5.4 || ^6.0",
+                "symfony/flex": "^2.2.2",
+                "symfony/intl": "^5.4 || ^6.0",
+                "symfony/web-profiler-bundle": "^5.4 || ^6.0",
+                "vimeo/psalm": "4.30.0"
+            },
+            "type": "sylius-plugin",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.10-dev"
+                },
+                "symfony": {
+                    "require": "^5.4 || ^6.0"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Abenmada\\MediaPlugin\\": "src/",
+                    "Tests\\Abenmada\\MediaPlugin\\": "tests/"
+                },
+                "classmap": [
+                    "src/MediaPlugin.php"
+                ]
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\Abenmada\\MediaPlugin\\": "tests/"
+                }
+            },
+            "scripts": {
+                "post-install-cmd": [
+                    "php bin/create_node_symlink.php"
+                ],
+                "post-update-cmd": [
+                    "php bin/create_node_symlink.php"
+                ],
+                "post-create-project-cmd": [
+                    "php bin/create_node_symlink.php"
+                ],
+                "phpstan": [
+                    "phpstan analyse -c phpstan.neon -vvv --memory-limit=1024M"
+                ],
+                "cscheck": [
+                    "vendor/bin/php-cs-fixer fix --dry-run"
+                ],
+                "csfix": [
+                    "vendor/bin/php-cs-fixer fix"
+                ],
+                "lint": [
+                    "composer csfix && composer cscheck && composer phpstan"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ayman BENMADA"
+                }
+            ],
+            "description": "The Media plugin provides a library to manage your media",
+            "keywords": [
+                "e-commerce",
+                "library",
+                "media",
                 "sylius",
                 "sylius-plugin",
                 "symfony"
@@ -19408,7 +19519,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "abenmada/backoffice-plugin": 20,
-        "abenmada/export-plugin": 20
+        "abenmada/export-plugin": 20,
+        "abenmada/media-plugin": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

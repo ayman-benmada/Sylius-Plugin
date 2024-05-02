@@ -63,4 +63,5 @@ return [
     Sylius\Abstraction\StateMachine\SyliusStateMachineAbstractionBundle::class => ['all' => true],
     Abenmada\BackofficePlugin\BackofficePlugin::class => ['all' => true],
     Abenmada\ExportPlugin\ExportPlugin::class => ['all' => true],
+    Abenmada\MediaPlugin\MediaPlugin::class => ['all' => true],
 ];
