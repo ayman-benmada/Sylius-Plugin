@@ -17,8 +17,6 @@
 /compose.override.yml
 /docker/mysql/data/
 
-/plugin/
-
 ###> symfony/framework-bundle ###
 .env
 /.env.*.local

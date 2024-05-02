@@ -2,6 +2,9 @@
     "abenmada/backoffice-plugin": {
         "version": "1.0.0"
     },
+    "abenmada/export-plugin": {
+        "version": "dev-main"
+    },
     "aeon-php/calendar": {
         "version": "0.16.4"
     },

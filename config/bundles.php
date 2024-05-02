@@ -62,4 +62,5 @@ return [
     Symfony\WebpackEncoreBundle\WebpackEncoreBundle::class => ['all' => true],
     Sylius\Abstraction\StateMachine\SyliusStateMachineAbstractionBundle::class => ['all' => true],
     Abenmada\BackofficePlugin\BackofficePlugin::class => ['all' => true],
+    Abenmada\ExportPlugin\ExportPlugin::class => ['all' => true],
 ];

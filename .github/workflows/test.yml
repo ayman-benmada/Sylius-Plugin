@@ -31,6 +31,9 @@ jobs:
             -   name: Clone Backoffice sylius plugin
                 run: git clone -b main https://github.com/ayman-benmada/Sylius-Backoffice-Plugin.git plugin/BackofficePlugin
 
+            -   name: Clone Export sylius plugin
+                run: git clone -b main https://github.com/ayman-benmada/Sylius-Export-Plugin.git plugin/ExportPlugin
+
             -   name: Install composer dependencies
                 run: composer install --prefer-dist --no-ansi --no-scripts --no-interaction --no-progress
 

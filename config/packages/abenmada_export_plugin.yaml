@@ -1,0 +1,2 @@
+imports:
+    - { resource: "@ExportPlugin/Resources/config/services.yaml" }

@@ -24,6 +24,13 @@
             "options": {
                 "symlink": true
             }
+        },
+        {
+            "type": "path",
+            "url": "plugin/ExportPlugin",
+            "options": {
+                "symlink": true
+            }
         }
     ],
     "require": {
@@ -35,7 +42,8 @@
         "symfony/flex": "^2.4",
         "symfony/http-client": "^5.4",
         "symfony/runtime": "^5.4 || ^6.4",
-        "abenmada/backoffice-plugin": "@dev"
+        "abenmada/backoffice-plugin": "@dev",
+        "abenmada/export-plugin": "@dev"
     },
     "require-dev": {
         "behat/behat": "^3.7",
