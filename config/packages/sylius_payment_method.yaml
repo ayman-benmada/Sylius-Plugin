@@ -1,0 +1,7 @@
+services:
+    app.form.extension.type.payment_method:
+        class: App\Form\Extension\PaymentMethodExtension
+        tags:
+            - { name: form.type_extension, extended_type: Sylius\Bundle\PaymentBundle\Form\Type\PaymentMethodType }
+        arguments:
+            - '@sylius.context.channel'
