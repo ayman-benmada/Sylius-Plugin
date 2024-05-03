@@ -38,6 +38,13 @@
             "options": {
                 "symlink": true
             }
+        },
+        {
+            "type": "path",
+            "url": "plugin/TranslationPlugin",
+            "options": {
+                "symlink": true
+            }
         }
     ],
     "require": {
@@ -51,7 +58,8 @@
         "symfony/runtime": "^5.4 || ^6.4",
         "abenmada/backoffice-plugin": "@dev",
         "abenmada/export-plugin": "@dev",
-        "abenmada/media-plugin": "@dev"
+        "abenmada/media-plugin": "@dev",
+        "abenmada/translation-plugin": "@dev"
     },
     "require-dev": {
         "behat/behat": "^3.7",

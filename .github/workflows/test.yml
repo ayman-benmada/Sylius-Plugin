@@ -37,6 +37,9 @@ jobs:
             -   name: Clone Media sylius plugin
                 run: git clone -b main https://github.com/ayman-benmada/Sylius-Media-Plugin.git plugin/MediaPlugin
 
+            -   name: Clone Translation sylius plugin
+                run: git clone -b main https://github.com/ayman-benmada/Sylius-Translation-Plugin.git plugin/TranslationPlugin
+
             -   name: Install composer dependencies
                 run: composer install --prefer-dist --no-ansi --no-scripts --no-interaction --no-progress
 

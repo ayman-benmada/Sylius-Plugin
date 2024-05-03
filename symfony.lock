@@ -8,6 +8,9 @@
     "abenmada/media-plugin": {
         "version": "dev-main"
     },
+    "abenmada/translation-plugin": {
+        "version": "dev-main"
+    },
     "aeon-php/calendar": {
         "version": "0.16.4"
     },
@@ -286,6 +289,9 @@
         "files": [
             "config/packages/lexik_jwt_authentication.yaml"
         ]
+    },
+    "lexik/translation-bundle": {
+        "version": "v6.0"
     },
     "liip/imagine-bundle": {
         "version": "1.8",

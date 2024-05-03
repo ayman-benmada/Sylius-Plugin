@@ -1,0 +1,2 @@
+imports:
+    - { resource: "@TranslationPlugin/Resources/config/services.yaml" }
