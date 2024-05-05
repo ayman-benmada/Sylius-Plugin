@@ -40,6 +40,9 @@ jobs:
             -   name: Clone Translation sylius plugin
                 run: git clone -b main https://github.com/ayman-benmada/Sylius-Translation-Plugin.git plugin/TranslationPlugin
 
+            -   name: Clone Multi factor authentication sylius plugin
+                run: git clone -b main https://github.com/ayman-benmada/Sylius-Multi-Factor-Authentication-Plugin.git plugin/MultiFactorAuthenticationPlugin
+
             -   name: Install composer dependencies
                 run: composer install --prefer-dist --no-ansi --no-scripts --no-interaction --no-progress
 

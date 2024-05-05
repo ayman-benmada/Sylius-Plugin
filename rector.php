@@ -3,12 +3,17 @@
 declare(strict_types=1);
 
 use Rector\Config\RectorConfig;
+use Rector\Doctrine\Set\DoctrineSetList;
 
-return static function (RectorConfig $rectorConfig): void {
-    $rectorConfig->importNames();
-    $rectorConfig->removeUnusedImports();
-    $rectorConfig->import(__DIR__ . '/vendor/sylius/sylius-rector/config/config.php');
+return function (RectorConfig $rectorConfig): void {
     $rectorConfig->paths([
-        __DIR__ . '/src'
+        # __DIR__ . '/plugin/BackofficePlugin',
+        # __DIR__ . '/plugin/ExportPlugin',
+        # __DIR__ . '/plugin/MediaPlugin',
+        # __DIR__ . '/plugin/MultiFactorAuthenticationPlugin',
+        # __DIR__ . '/plugin/TranslationPlugin',
+    ]);
+    $rectorConfig->sets([
+        DoctrineSetList::ANNOTATIONS_TO_ATTRIBUTES,
     ]);
 };

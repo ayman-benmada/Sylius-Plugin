@@ -1,0 +1,7 @@
+abenmada_multi_factor_authentication_plugin_shop_routing:
+    resource: "@MultiFactorAuthenticationPlugin/Resources/config/routes/sylius_shop.yaml"
+    prefix: /{_locale}
+
+abenmada_multi_factor_authentication_plugin_admin_routing:
+    resource: "@MultiFactorAuthenticationPlugin/Resources/config/routes/sylius_admin.yaml"
+    prefix: /%sylius_admin.path_name%

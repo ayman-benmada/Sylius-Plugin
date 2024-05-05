@@ -45,21 +45,29 @@
             "options": {
                 "symlink": true
             }
+        },
+        {
+            "type": "path",
+            "url": "plugin/MultiFactorAuthenticationPlugin",
+            "options": {
+                "symlink": true
+            }
         }
     ],
     "require": {
         "php": "^8.3",
+        "abenmada/backoffice-plugin": "@dev",
+        "abenmada/export-plugin": "@dev",
+        "abenmada/media-plugin": "@dev",
+        "abenmada/multi-factor-authentication-plugin": "@dev",
+        "abenmada/translation-plugin": "@dev",
         "http-interop/http-factory-guzzle": "^1.2",
         "sylius/paypal-plugin": "^1.5.2",
         "sylius/sylius": "~1.12.11",
         "symfony/dotenv": "^5.4 || ^6.4",
         "symfony/flex": "^2.4",
         "symfony/http-client": "^5.4",
-        "symfony/runtime": "^5.4 || ^6.4",
-        "abenmada/backoffice-plugin": "@dev",
-        "abenmada/export-plugin": "@dev",
-        "abenmada/media-plugin": "@dev",
-        "abenmada/translation-plugin": "@dev"
+        "symfony/runtime": "^5.4 || ^6.4"
     },
     "require-dev": {
         "behat/behat": "^3.7",

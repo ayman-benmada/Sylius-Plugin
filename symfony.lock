@@ -8,6 +8,9 @@
     "abenmada/media-plugin": {
         "version": "dev-main"
     },
+    "abenmada/multi-factor-authentication-plugin": {
+        "version": "dev-main"
+    },
     "abenmada/translation-plugin": {
         "version": "dev-main"
     },
@@ -463,6 +466,19 @@
     },
     "ramsey/uuid": {
         "version": "3.8.0"
+    },
+    "scheb/2fa-bundle": {
+        "version": "5.13",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "5.0",
+            "ref": "0a83961ef50ff91812b229a6f0caf28431d94aec"
+        },
+        "files": [
+            "config/packages/scheb_2fa.yaml",
+            "config/routes/scheb_2fa.yaml"
+        ]
     },
     "sebastian/code-unit-reverse-lookup": {
         "version": "1.0.1"

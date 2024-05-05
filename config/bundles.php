@@ -66,4 +66,6 @@ return [
     Abenmada\MediaPlugin\MediaPlugin::class => ['all' => true],
     Lexik\Bundle\TranslationBundle\LexikTranslationBundle::class => ['all' => true],
     Abenmada\TranslationPlugin\TranslationPlugin::class => ['all' => true],
+    Abenmada\MultiFactorAuthenticationPlugin\MultiFactorAuthenticationPlugin::class => ['all' => true],
+    Scheb\TwoFactorBundle\SchebTwoFactorBundle::class => ['all' => true],
 ];
