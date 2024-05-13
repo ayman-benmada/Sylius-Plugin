@@ -1,17 +1,17 @@
 {
-    "abenmada/backoffice-plugin": {
-        "version": "1.0.0"
-    },
-    "abenmada/export-plugin": {
+    "abenmada/sylius-backoffice-plugin": {
         "version": "dev-main"
     },
-    "abenmada/media-plugin": {
+    "abenmada/sylius-export-plugin": {
         "version": "dev-main"
     },
-    "abenmada/multi-factor-authentication-plugin": {
+    "abenmada/sylius-media-plugin": {
         "version": "dev-main"
     },
-    "abenmada/translation-plugin": {
+    "abenmada/sylius-multi-factor-authentication-plugin": {
+        "version": "dev-main"
+    },
+    "abenmada/sylius-translation-plugin": {
         "version": "dev-main"
     },
     "aeon-php/calendar": {

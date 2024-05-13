@@ -4,15 +4,15 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c9e6d737a8204ecb44614a6fbc0a5db3",
+    "content-hash": "701ab77b6d41df3fc922ab1e5263c105",
     "packages": [
         {
-            "name": "abenmada/backoffice-plugin",
+            "name": "abenmada/sylius-backoffice-plugin",
             "version": "dev-main",
             "dist": {
                 "type": "path",
                 "url": "plugin/BackofficePlugin",
-                "reference": "e253d931d84b1ef1452ad47ae95e7cae7c9708a4"
+                "reference": "5bd8a5edb27a241c215ad7adf6d752bb17a85ee5"
             },
             "require": {
                 "php": "^8.0",
@@ -118,12 +118,12 @@
             }
         },
         {
-            "name": "abenmada/export-plugin",
+            "name": "abenmada/sylius-export-plugin",
             "version": "dev-main",
             "dist": {
                 "type": "path",
                 "url": "plugin/ExportPlugin",
-                "reference": "a5dbffb8fe16c07198974c1678f577d294697fef"
+                "reference": "7bde72d0431fc19dcc285588c78559a5dbbb7cc3"
             },
             "require": {
                 "php": "^8.0",
@@ -229,12 +229,12 @@
             }
         },
         {
-            "name": "abenmada/media-plugin",
+            "name": "abenmada/sylius-media-plugin",
             "version": "dev-main",
             "dist": {
                 "type": "path",
                 "url": "plugin/MediaPlugin",
-                "reference": "ce319748b80a13a4e910e243a70c6a36c173c4c2"
+                "reference": "f707a16670686f9a1779f15d907475330b88bfe7"
             },
             "require": {
                 "php": "^8.0",
@@ -340,12 +340,12 @@
             }
         },
         {
-            "name": "abenmada/multi-factor-authentication-plugin",
+            "name": "abenmada/sylius-multi-factor-authentication-plugin",
             "version": "dev-main",
             "dist": {
                 "type": "path",
                 "url": "plugin/MultiFactorAuthenticationPlugin",
-                "reference": "5b0c2d20caf4b1d1402f7fa1d027f294159a8d11"
+                "reference": "ae1cf811956d297c427eab31e74344360575b911"
             },
             "require": {
                 "php": "^8.0",
@@ -453,12 +453,12 @@
             }
         },
         {
-            "name": "abenmada/translation-plugin",
+            "name": "abenmada/sylius-translation-plugin",
             "version": "dev-main",
             "dist": {
                 "type": "path",
                 "url": "plugin/TranslationPlugin",
-                "reference": "78286b51144731671f70308a69fccda57759dd90"
+                "reference": "a591e369ae5bbae0f6bd7c67f9afd7a11adbe71d"
             },
             "require": {
                 "lexik/translation-bundle": "^6.0",
@@ -2629,23 +2629,26 @@
         },
         {
             "name": "doctrine/sql-formatter",
-            "version": "1.2.0",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/sql-formatter.git",
-                "reference": "a321d114e0a18e6497f8a2cd6f890e000cc17ecc"
+                "reference": "d1ac84aef745c69ea034929eb6d65a6908b675cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/sql-formatter/zipball/a321d114e0a18e6497f8a2cd6f890e000cc17ecc",
-                "reference": "a321d114e0a18e6497f8a2cd6f890e000cc17ecc",
+                "url": "https://api.github.com/repos/doctrine/sql-formatter/zipball/d1ac84aef745c69ea034929eb6d65a6908b675cc",
+                "reference": "d1ac84aef745c69ea034929eb6d65a6908b675cc",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1 || ^8.0"
+                "php": "^8.1"
             },
             "require-dev": {
-                "bamarni/composer-bin-plugin": "^1.4"
+                "doctrine/coding-standard": "^12",
+                "phpstan/phpstan": "^1.10",
+                "phpunit/phpunit": "^10.5",
+                "vimeo/psalm": "^5.24"
             },
             "bin": [
                 "bin/sql-formatter"
@@ -2675,9 +2678,9 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/sql-formatter/issues",
-                "source": "https://github.com/doctrine/sql-formatter/tree/1.2.0"
+                "source": "https://github.com/doctrine/sql-formatter/tree/1.4.0"
             },
-            "time": "2023-08-16T21:49:04+00:00"
+            "time": "2024-05-08T08:12:09+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -5901,16 +5904,16 @@
         },
         {
             "name": "paragonie/constant_time_encoding",
-            "version": "v2.6.3",
+            "version": "v2.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/constant_time_encoding.git",
-                "reference": "58c3f47f650c94ec05a151692652a868995d2938"
+                "reference": "52a0d99e69f56b9ec27ace92ba56897fe6993105"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/constant_time_encoding/zipball/58c3f47f650c94ec05a151692652a868995d2938",
-                "reference": "58c3f47f650c94ec05a151692652a868995d2938",
+                "url": "https://api.github.com/repos/paragonie/constant_time_encoding/zipball/52a0d99e69f56b9ec27ace92ba56897fe6993105",
+                "reference": "52a0d99e69f56b9ec27ace92ba56897fe6993105",
                 "shasum": ""
             },
             "require": {
@@ -5964,7 +5967,7 @@
                 "issues": "https://github.com/paragonie/constant_time_encoding/issues",
                 "source": "https://github.com/paragonie/constant_time_encoding"
             },
-            "time": "2022-06-14T06:56:20+00:00"
+            "time": "2024-05-08T12:18:48+00:00"
         },
         {
             "name": "payum/iso4217",
@@ -6873,16 +6876,16 @@
         },
         {
             "name": "phpstan/phpdoc-parser",
-            "version": "1.28.0",
+            "version": "1.29.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpdoc-parser.git",
-                "reference": "cd06d6b1a1b3c75b0b83f97577869fd85a3cd4fb"
+                "reference": "536889f2b340489d328f5ffb7b02bb6b183ddedc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/cd06d6b1a1b3c75b0b83f97577869fd85a3cd4fb",
-                "reference": "cd06d6b1a1b3c75b0b83f97577869fd85a3cd4fb",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/536889f2b340489d328f5ffb7b02bb6b183ddedc",
+                "reference": "536889f2b340489d328f5ffb7b02bb6b183ddedc",
                 "shasum": ""
             },
             "require": {
@@ -6914,9 +6917,9 @@
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
             "support": {
                 "issues": "https://github.com/phpstan/phpdoc-parser/issues",
-                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.28.0"
+                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.29.0"
             },
-            "time": "2024-04-03T18:51:33+00:00"
+            "time": "2024-05-06T12:04:23+00:00"
         },
         {
             "name": "psr/cache",
@@ -7167,20 +7170,20 @@
         },
         {
             "name": "psr/http-factory",
-            "version": "1.0.2",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/http-factory.git",
-                "reference": "e616d01114759c4c489f93b099585439f795fe35"
+                "reference": "2b4765fddfe3b508ac62f829e852b1501d3f6e8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/http-factory/zipball/e616d01114759c4c489f93b099585439f795fe35",
-                "reference": "e616d01114759c4c489f93b099585439f795fe35",
+                "url": "https://api.github.com/repos/php-fig/http-factory/zipball/2b4765fddfe3b508ac62f829e852b1501d3f6e8a",
+                "reference": "2b4765fddfe3b508ac62f829e852b1501d3f6e8a",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.0.0",
+                "php": ">=7.1",
                 "psr/http-message": "^1.0 || ^2.0"
             },
             "type": "library",
@@ -7204,7 +7207,7 @@
                     "homepage": "https://www.php-fig.org/"
                 }
             ],
-            "description": "Common interfaces for PSR-7 HTTP message factories",
+            "description": "PSR-17: Common interfaces for PSR-7 HTTP message factories",
             "keywords": [
                 "factory",
                 "http",
@@ -7216,9 +7219,9 @@
                 "response"
             ],
             "support": {
-                "source": "https://github.com/php-fig/http-factory/tree/1.0.2"
+                "source": "https://github.com/php-fig/http-factory"
             },
-            "time": "2023-04-10T20:10:41+00:00"
+            "time": "2024-04-15T12:06:14+00:00"
         },
         {
             "name": "psr/http-message",
@@ -9147,16 +9150,16 @@
         },
         {
             "name": "sylius/state-machine-abstraction",
-            "version": "v1.13.0",
+            "version": "v1.13.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/StateMachineAbstraction.git",
-                "reference": "4360d580d15462c928ab2945cf8a530092c4186c"
+                "reference": "46e71a2b1652565797d17d281e84692d752608b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/StateMachineAbstraction/zipball/4360d580d15462c928ab2945cf8a530092c4186c",
-                "reference": "4360d580d15462c928ab2945cf8a530092c4186c",
+                "url": "https://api.github.com/repos/Sylius/StateMachineAbstraction/zipball/46e71a2b1652565797d17d281e84692d752608b7",
+                "reference": "46e71a2b1652565797d17d281e84692d752608b7",
                 "shasum": ""
             },
             "require": {
@@ -9199,22 +9202,22 @@
             "description": "Abstraction layer for State Machine used in Sylius bundles",
             "support": {
                 "issues": "https://github.com/Sylius/StateMachineAbstraction/issues",
-                "source": "https://github.com/Sylius/StateMachineAbstraction/tree/v1.13.0"
+                "source": "https://github.com/Sylius/StateMachineAbstraction/tree/v1.13.1"
             },
-            "time": "2024-02-22T09:50:30+00:00"
+            "time": "2024-04-24T09:05:17+00:00"
         },
         {
             "name": "sylius/sylius",
-            "version": "v1.12.15",
+            "version": "v1.12.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/Sylius.git",
-                "reference": "ee77b2b054f866dbc434c21d58bbc135bbebf401"
+                "reference": "90d580fc19ee56d53cf6d312233ee4c664109756"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/Sylius/zipball/ee77b2b054f866dbc434c21d58bbc135bbebf401",
-                "reference": "ee77b2b054f866dbc434c21d58bbc135bbebf401",
+                "url": "https://api.github.com/repos/Sylius/Sylius/zipball/90d580fc19ee56d53cf6d312233ee4c664109756",
+                "reference": "90d580fc19ee56d53cf6d312233ee4c664109756",
                 "shasum": ""
             },
             "require": {
@@ -9484,7 +9487,7 @@
             "homepage": "https://sylius.com",
             "support": {
                 "issues": "https://github.com/Sylius/Sylius/issues",
-                "source": "https://github.com/Sylius/Sylius/tree/v1.12.15"
+                "source": "https://github.com/Sylius/Sylius/tree/v1.12.16"
             },
             "funding": [
                 {
@@ -9492,7 +9495,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-04-23T10:35:05+00:00"
+            "time": "2024-05-10T08:39:33+00:00"
         },
         {
             "name": "sylius/theme-bundle",
@@ -14803,22 +14806,22 @@
         },
         {
             "name": "twig/intl-extra",
-            "version": "v3.9.2",
+            "version": "v3.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/intl-extra.git",
-                "reference": "39865e5d13165016a8e7ab8cc648ad2f7aa4b639"
+                "reference": "693f6beb8ca91fc6323e01b3addf983812f65c93"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/intl-extra/zipball/39865e5d13165016a8e7ab8cc648ad2f7aa4b639",
-                "reference": "39865e5d13165016a8e7ab8cc648ad2f7aa4b639",
+                "url": "https://api.github.com/repos/twigphp/intl-extra/zipball/693f6beb8ca91fc6323e01b3addf983812f65c93",
+                "reference": "693f6beb8ca91fc6323e01b3addf983812f65c93",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.2.5",
                 "symfony/intl": "^5.4|^6.4|^7.0",
-                "twig/twig": "^3.9"
+                "twig/twig": "^3.10"
             },
             "require-dev": {
                 "symfony/phpunit-bridge": "^6.4|^7.0"
@@ -14851,7 +14854,7 @@
                 "twig"
             ],
             "support": {
-                "source": "https://github.com/twigphp/intl-extra/tree/v3.9.2"
+                "source": "https://github.com/twigphp/intl-extra/tree/v3.10.0"
             },
             "funding": [
                 {
@@ -14863,20 +14866,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-04-17T12:41:53+00:00"
+            "time": "2024-05-11T07:35:57+00:00"
         },
         {
             "name": "twig/twig",
-            "version": "v3.9.3",
+            "version": "v3.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "a842d75fed59cdbcbd3a3ad7fb9eb768fc350d58"
+                "reference": "3af5ab2e52279e5e23dc192b1a26db3b8cffa4e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/a842d75fed59cdbcbd3a3ad7fb9eb768fc350d58",
-                "reference": "a842d75fed59cdbcbd3a3ad7fb9eb768fc350d58",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/3af5ab2e52279e5e23dc192b1a26db3b8cffa4e7",
+                "reference": "3af5ab2e52279e5e23dc192b1a26db3b8cffa4e7",
                 "shasum": ""
             },
             "require": {
@@ -14930,7 +14933,7 @@
             ],
             "support": {
                 "issues": "https://github.com/twigphp/Twig/issues",
-                "source": "https://github.com/twigphp/Twig/tree/v3.9.3"
+                "source": "https://github.com/twigphp/Twig/tree/v3.10.1"
             },
             "funding": [
                 {
@@ -14942,7 +14945,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-04-18T11:59:33+00:00"
+            "time": "2024-05-12T06:16:18+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -15891,16 +15894,16 @@
         },
         {
             "name": "composer/xdebug-handler",
-            "version": "3.0.4",
+            "version": "3.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/xdebug-handler.git",
-                "reference": "4f988f8fdf580d53bdb2d1278fe93d1ed5462255"
+                "reference": "6c1925561632e83d60a44492e0b344cf48ab85ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/xdebug-handler/zipball/4f988f8fdf580d53bdb2d1278fe93d1ed5462255",
-                "reference": "4f988f8fdf580d53bdb2d1278fe93d1ed5462255",
+                "url": "https://api.github.com/repos/composer/xdebug-handler/zipball/6c1925561632e83d60a44492e0b344cf48ab85ef",
+                "reference": "6c1925561632e83d60a44492e0b344cf48ab85ef",
                 "shasum": ""
             },
             "require": {
@@ -15937,7 +15940,7 @@
             "support": {
                 "irc": "ircs://irc.libera.chat:6697/composer",
                 "issues": "https://github.com/composer/xdebug-handler/issues",
-                "source": "https://github.com/composer/xdebug-handler/tree/3.0.4"
+                "source": "https://github.com/composer/xdebug-handler/tree/3.0.5"
             },
             "funding": [
                 {
@@ -15953,7 +15956,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-03-26T18:29:49+00:00"
+            "time": "2024-05-06T16:37:16+00:00"
         },
         {
             "name": "dbrekelmans/bdi",
@@ -18647,16 +18650,16 @@
         },
         {
             "name": "rector/rector",
-            "version": "1.0.4",
+            "version": "1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rectorphp/rector.git",
-                "reference": "6e04d0eb087aef707fa0c5686d33d6ff61f4a555"
+                "reference": "73eb63e4f9011dba6b7c66c3262543014e352f34"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rectorphp/rector/zipball/6e04d0eb087aef707fa0c5686d33d6ff61f4a555",
-                "reference": "6e04d0eb087aef707fa0c5686d33d6ff61f4a555",
+                "url": "https://api.github.com/repos/rectorphp/rector/zipball/73eb63e4f9011dba6b7c66c3262543014e352f34",
+                "reference": "73eb63e4f9011dba6b7c66c3262543014e352f34",
                 "shasum": ""
             },
             "require": {
@@ -18694,7 +18697,7 @@
             ],
             "support": {
                 "issues": "https://github.com/rectorphp/rector/issues",
-                "source": "https://github.com/rectorphp/rector/tree/1.0.4"
+                "source": "https://github.com/rectorphp/rector/tree/1.0.5"
             },
             "funding": [
                 {
@@ -18702,20 +18705,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-04-05T09:01:07+00:00"
+            "time": "2024-05-10T05:31:15+00:00"
         },
         {
             "name": "robertfausk/behat-panther-extension",
-            "version": "v1.1.2",
+            "version": "v1.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/robertfausk/behat-panther-extension.git",
-                "reference": "42b9ad869a6142a64bc38b51274d085b3617b2fd"
+                "reference": "9b3390b30877e31f4a61b8d00b614777213b8115"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/robertfausk/behat-panther-extension/zipball/42b9ad869a6142a64bc38b51274d085b3617b2fd",
-                "reference": "42b9ad869a6142a64bc38b51274d085b3617b2fd",
+                "url": "https://api.github.com/repos/robertfausk/behat-panther-extension/zipball/9b3390b30877e31f4a61b8d00b614777213b8115",
+                "reference": "9b3390b30877e31f4a61b8d00b614777213b8115",
                 "shasum": ""
             },
             "require": {
@@ -18795,9 +18798,9 @@
             ],
             "support": {
                 "issues": "https://github.com/robertfausk/behat-panther-extension/issues",
-                "source": "https://github.com/robertfausk/behat-panther-extension/tree/v1.1.2"
+                "source": "https://github.com/robertfausk/behat-panther-extension/tree/v1.1.3"
             },
-            "time": "2024-04-18T07:34:55+00:00"
+            "time": "2024-05-07T07:14:59+00:00"
         },
         {
             "name": "robertfausk/mink-panther-driver",
@@ -20631,11 +20634,11 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "abenmada/backoffice-plugin": 20,
-        "abenmada/export-plugin": 20,
-        "abenmada/media-plugin": 20,
-        "abenmada/multi-factor-authentication-plugin": 20,
-        "abenmada/translation-plugin": 20
+        "abenmada/sylius-backoffice-plugin": 20,
+        "abenmada/sylius-export-plugin": 20,
+        "abenmada/sylius-media-plugin": 20,
+        "abenmada/sylius-multi-factor-authentication-plugin": 20,
+        "abenmada/sylius-translation-plugin": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
